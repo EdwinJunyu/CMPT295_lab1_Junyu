@@ -1,0 +1,15 @@
+1. The four commands I used were:
+gcc -c array_sum.S -o array_sum.o
+gcc -Wall -Wpedantic -std=c17 -march=haswell -c array_sum_speed.c -o array_sum_speed.o
+gcc array_sum_speed.o array_sum.o -o array_sum_speed
+./array_sum_speed 1000000
+
+These commands assembled the assembly source, compiled the C source, linked the two object files, and run the resulting executable with an array size of 1,000,000.
+
+2. The first command I used to compile array_sum.c was gcc -c array_sum.c -o array_sum.o. 
+My C implementation took about 1.78 ms, while the provided assembly implementation took about 0.295 ms. 
+Therefore, the unoptimized C implementation was approximately 6 times slower than the provided assembly implementation.
+
+3. After adding -O3, the C implementation took about 0.079 ms, while the assembly implementation took about 0.295 ms. 
+Therefore, the optimized C implementation was approximately 3.7 times faster than the provided assembly implementation. 
+Compared with the unoptimized C implementation, which took about 1.78 ms, using -O3 made the C implementation approximately 22.5 times faster.
